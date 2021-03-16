@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* 
+* GENERAL STYLE
+*/
 
 :root {
     --main: rgb(8, 0, 255);
@@ -39,6 +42,9 @@ body {
     font-family: 'Shadows Into Light', cursive;
 }
 
+/* 
+* The dice
+*/
 .fa-dice { 
     font-size:  3.5rem;
     color: var(--main);
@@ -63,6 +69,21 @@ body {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgba(0,212,255,1), 0 0 40px rgba(0,212,255,1), 0 0 50px rgba(0,212,255,1), 0 0 60px rgba(0,212,255,1), 0 0 70px rgba(0,212,255,1);
 }
 
+/* 
+* Player Card
+*/
+
+.player {
+  background-color: rgb(103, 102, 102);
+  border-radius: 5px;
+  padding: 2rem;
+  transition: 1s;
+}
+
+.player-active {
+  background-color: white;
+  transform: scale(1.2);
+}
 
 /* 
 * MODAL

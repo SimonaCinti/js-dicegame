@@ -85,6 +85,11 @@ body {
   transform: scale(1.2);
 }
 
+.player.player-winner {
+  background-color: rgb(0, 255, 30);
+   transform: scale(1.4);
+}
+
 /* 
 * MODAL
 */

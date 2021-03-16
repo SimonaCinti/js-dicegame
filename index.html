@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Dice War</title>
+</head>
+<body>
+    <main class="container d-flex flex-column justify-content-center align-items-center">
+        <section class="title container mt-5">
+            <!-- Title -->
+            <div class="row flex-column align-items-center">
+                <div class="d-flex justify-content-center align-items-center mb-5">
+                    <img src="./img/logo.png" alt="logo">
+                    <i class="fas fa-dice ml-5"></i>
+                </div>
+                <!-- How to -->
+                <div class="howto d-flex flex-column align-items-center text-center">
+                    <h2 class="btn-play show-modal mb-4">How to play</h2>
+                    <div class="modal-tutorial hidden">
+                        <p>
+                            On their turn, a player rolls the dice. The goal is to accumulate as many points as possible, adding up the numbers rolled on the dice. But if a player rolls a 1, the player's turn is over and any points they have
+                            gained during this turn are lost, but not the total score obtained during the game. Rolling a 1 doesn't wipe out your entire score
+                        </p>
+                        <p>
+                            A player can also choose to hold if they do not want to risk to roll the dice again. If the player chooses to hold, all of the points rolled during that turn are added
+                            to their total score.
+                        </p>
+                        <p>
+                            When a player reaches a total of 100 or more points, the game ends and that player is the winner.
+                        </p>
+                        <button class="close-modal mt-5">Let's play!</button>
+                    </div>
+                    <div class="overlay hidden"></div>
+                    <p>Let the battle begins!</p> 
+                    <button class="btn btn-new">New game</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Play the game -->
+        <section class="container mt-5 pt-5">
+            <div class="row d-flex justify-content-around">
+                    <!-- Ready player one -->
+                    <div class="player player-0 player-active">
+                        <h2 class="name" id="name-0">Player 1</h2>
+                        <p class="score" id="score-0">42</p>
+                        <div class="current">
+                            <p class="current-label">Current</p>
+                            <p class="current-score" id="current-0">0</p>
+                        </div>
+                    </div>
+                <!-- The Dice -->
+                <div class="dice">
+                    <i class="fas fa-dice-one"></i>
+                </div>
+                <!-- Ready player two -->
+                <div class="player player-1 player-active">
+                   <h2 class="name" id="name-1">Player 2</h2>
+                        <p class="score" id="score-1">1</p>
+                        <div class="current">
+                            <p class="current-label">Current</p>
+                            <p class="current-score" id="current-1">0</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+        <!--  Button command -->
+        <section class="container">
+            <div class="row d-flex flex-column align-content-center text-center button-command">
+                <button class="btn btn-roll">Roll dice</button>
+                <button class="btn btn-hold">Hold</button>
+            </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

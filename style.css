@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+:root {
+    --main: rgb(8, 0, 255);
+}
+
+*{  
+    /* font-family: 'IBM Plex Sans', sans-serif; */
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    height: 100vh;
+    background: rgb(185, 207, 211) !important; 
+}
+
+/* 
+* Utilities 
+*/
+
+.hidden {
+    display: none;
+}
+
+.btn-play {
+    background-color: rgb(189, 193, 192);
+    border: 1px solid rgb(136, 138, 138);
+    max-width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.fa-dice { 
+    font-size:  3.5rem;
+    color: var(--main);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgba(42,93,25,1), 0 0 40px rgba(42,93,25,1), 0 0 50px rgba(42,93,25,1), 0 0 60px rgba(42,93,25,1), 0 0 70px rgba(42,93,25,1);
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px rgba(0,212,255,1), 0 0 40px rgba(0,212,255,1), 0 0 50px rgba(0,212,255,1), 0 0 60px rgba(0,212,255,1), 0 0 70px rgba(0,212,255,1), 0 0 80px rgba(0,212,255,1);
+  }
+}
+
+.dice .fas {
+    color: var(--main);
+    font-size: 5rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgba(0,212,255,1), 0 0 40px rgba(0,212,255,1), 0 0 50px rgba(0,212,255,1), 0 0 60px rgba(0,212,255,1), 0 0 70px rgba(0,212,255,1);
+}
+
+
+/* 
+* MODAL
+*/
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.modal-tutorial {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: rgb(238, 234, 234);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.close-modal {
+  padding: 10px;
+  background: silver;
+}
+
+/* 
+* Button Command
+*/
+
+.button-command button {
+  margin-top: 2rem;
+  max-width: 250px;
+}

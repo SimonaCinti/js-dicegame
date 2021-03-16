@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Variables for Modal
+ *! Variables for Modal
  */
 
 const showModal = document.querySelector('.show-modal');
@@ -11,15 +11,15 @@ const btnCloseModal = document.querySelector('.close-modal');
 
 
 /**
- * Variables for buttons
+ *! Variables for buttons
  */
 
-const btnNew = document.querySelector('.btn-play');
+const btnNew = document.querySelector('.btn-new');
 const btnRoll = document.querySelector('.btn-roll');
 const btnHold = document.querySelector('.btn-hold');
 
 /**
- * Variable for starting game
+ *! Variable for starting game
  */
 
 const player0El = document.querySelector('.player-0');
@@ -30,7 +30,7 @@ const current0El = document.getElementById('current-0');
 const current1El = document.getElementById('current-1');
 const diceImg = document.querySelector('.dice');
 
-const scores = [0, 0];
+let scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 let play = true;
@@ -40,7 +40,7 @@ score1Player.textContent = 0;
 diceImg.classList.add('none');
 
 /**
- * Tutorial Part
+ *! Tutorial Part
  */
 const openModal = function () {
     modal.classList.remove('hidden');
@@ -58,7 +58,7 @@ showModal.addEventListener('click', openModal);
 btnCloseModal.addEventListener('click', closeModal);
 
 /**
- * Roll the dice
+ *! Roll the dice
  */
 
 btnRoll.addEventListener('click', function(){
@@ -107,7 +107,7 @@ btnRoll.addEventListener('click', function(){
 });
 
 /**
- * Hold the score
+ *! Hold the score
  */
 
 btnHold.addEventListener('click', function(){
@@ -121,7 +121,7 @@ btnHold.addEventListener('click', function(){
     
         // Check
     
-        if (scores[activePlayer] >= 10) {
+        if (scores[activePlayer] >= 1) {
             play = false;
             diceImg.classList.add('none');
             document.querySelector(`.player-${activePlayer}`).classList.add('player-winner');
@@ -135,6 +135,35 @@ btnHold.addEventListener('click', function(){
     };
 
 });
+
+/**
+ *! START A NEW GAME
+ */
+
+ btnNew.addEventListener('click', function(){
+     let reset = document.getElementsByClassName('player');
+     for (let i = 0; i < reset.length; i++){
+         if( reset[i].classList.contains('player-winner')){
+             reset[i].classList.remove('player-winner');
+         }
+     };
+     if (!player0El.classList.contains('player-active')){
+         player0El.classList.add('player-active');
+     }
+     if (player1El.classList.contains('player-active')){
+         player0El.classList.remove('player-active');
+     }
+     activePlayer = 0;
+     play = true;
+     scores = [0, 0];
+     console.log(scores);
+     currentScore = 0;
+     score0Player.textContent = 0;
+     score1Player.textContent = 0;
+     current0El.textContent = 0;
+     current1El.textContent = 0;
+ })
+
 
 /**
  * FUNCTION

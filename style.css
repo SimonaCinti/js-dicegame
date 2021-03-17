@@ -42,6 +42,10 @@ body {
     font-family: 'Shadows Into Light', cursive;
 }
 
+h2 {
+  font-size: 1.2rem;
+}
+
 /* 
 * The dice
 */
@@ -76,7 +80,7 @@ body {
 .player {
   background-color: rgb(103, 102, 102);
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1rem;
   transition: 1s;
 }
 
@@ -128,6 +132,5 @@ body {
 */
 
 .button-command button {
-  margin-top: 2rem;
-  max-width: 250px;
+  margin-top: 1rem;
 }

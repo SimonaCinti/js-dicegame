@@ -21,7 +21,7 @@ const btnHold = document.querySelector('.btn-hold');
 /**
  *! Variable for starting game
  */
-
+let scores, currentScore, activePlayer, play;
 const player0El = document.querySelector('.player-0');
 const player1El = document.querySelector('.player-1');
 const score0Player = document.getElementById('score-0');
@@ -30,14 +30,9 @@ const current0El = document.getElementById('current-0');
 const current1El = document.getElementById('current-1');
 const diceImg = document.querySelector('.dice');
 
-let scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let play = true;
 
-score0Player.textContent = 0;
-score1Player.textContent = 0;
-diceImg.classList.add('none');
+
+newGame();
 
 /**
  *! Tutorial Part
@@ -120,13 +115,11 @@ btnHold.addEventListener('click', function(){
         document.getElementById(`score-${activePlayer}`).textContent = scores[activePlayer];
     
         // Check
-    
-        if (scores[activePlayer] >= 1) {
+        if (scores[activePlayer] >= 100) {
             play = false;
             diceImg.classList.add('none');
             document.querySelector(`.player-${activePlayer}`).classList.add('player-winner');
             document.querySelector(`.player-${activePlayer}`).classList.remove('player-active');
-            
         } else {
             // switch to the next player
             changePlayer();
@@ -140,29 +133,7 @@ btnHold.addEventListener('click', function(){
  *! START A NEW GAME
  */
 
- btnNew.addEventListener('click', function(){
-     let reset = document.getElementsByClassName('player');
-     for (let i = 0; i < reset.length; i++){
-         if( reset[i].classList.contains('player-winner')){
-             reset[i].classList.remove('player-winner');
-         }
-     };
-     if (!player0El.classList.contains('player-active')){
-         player0El.classList.add('player-active');
-     }
-     if (player1El.classList.contains('player-active')){
-         player0El.classList.remove('player-active');
-     }
-     activePlayer = 0;
-     play = true;
-     scores = [0, 0];
-     console.log(scores);
-     currentScore = 0;
-     score0Player.textContent = 0;
-     score1Player.textContent = 0;
-     current0El.textContent = 0;
-     current1El.textContent = 0;
- })
+ btnNew.addEventListener('click', newGame);
 
 
 /**
@@ -178,3 +149,35 @@ function changePlayer(){
     player0El.classList.toggle('player-active');
     player1El.classList.toggle('player-active');
 }
+
+function newGame() {
+     scores = [0, 0];
+     currentScore = 0;
+     activePlayer = 0;
+     play = true;
+    diceImg.classList.add('none');
+    score0Player.textContent = 0;
+    score1Player.textContent = 0;
+    current0El.textContent = 0;
+    current1El.textContent = 0;
+    player0El.classList.remove('player-winner');
+    player1El.classList.remove('player-winner');
+    player0El.classList.add('player-active');
+    player1El.classList.remove('player-active');
+
+    
+    // !foreach
+    // let reset = document.getElementsByClassName('player');
+    // for (let i = 0; i < reset.length; i++) {
+    //     if (reset[i].classList.contains('player-winner')) {
+    //         reset[i].classList.remove('player-winner');
+    //     }
+    // };
+    // if (!player0El.classList.contains('player-active')) {
+    //     player0El.classList.add('player-active');
+    // }
+    // if (player1El.classList.contains('player-active')) {
+    //     player0El.classList.remove('player-active');
+    // }
+}
+
